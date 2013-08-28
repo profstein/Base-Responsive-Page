@@ -58,6 +58,9 @@ footer{
   border-top: 3px solid #999;
 }
 
+.boxes{
+    clear:both; /*To make sure it doesn't run into the content above*/
+}
 
 .boxes div{
   width:100%;
@@ -68,7 +71,6 @@ footer{
   line-height:3em;
   text-align: center;
   background-color: #fafafa;
-  
 }
 
 /* ==============================
