@@ -13,8 +13,6 @@ This is used to help you be able to set the widths of things once and then come 
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
-  -icab-box-sizing: border-box;
-  -khtml-box-sizing: border-box;
   box-sizing: border-box;  }
 
 
@@ -70,7 +68,7 @@ footer{
   height:4em;
   line-height:3em;
   text-align: center;
-  background-color: #fafafa;
+  background-color: #ffe9e9;
 }
 
 /* ==============================
@@ -80,27 +78,10 @@ footer{
 */
 
 
-@media only screen and (max-width: 20em) {
-	/* This is for screens 320px or less
-mostly this is mobile phones in portait orientation 
-  320/16 = 20
-*/
-
-  .boxes div{
-    background-color: #ffe9e9;
-  }
-}
-
-@media only screen and (min-width: 20.063em) and (max-width: 30em) {
-/* Screen between 321px and 480px
-  This is larger phones and normal phones in landscape
-  321/16 = 20.053
+@media only screen and (min-width: 30em) {
+/* Screen from 480px and up
   480/16 = 30
-  
-  If you don't want to add anyt difference between portrait and landscape phones then just use 
-@media only screen  and (max-width: 30em)   
-  
-  instead of these first two.(equivalent of max-width: 480px)
+  480 is iphone in landscape before longer screen and retina
   */
     
     .boxes div{
@@ -115,19 +96,19 @@ mostly this is mobile phones in portait orientation
 }
 
 
-@media only screen and (min-width: 30.063em) and (max-width: 50em) {
-	/* Screens between 481px and 800px
-  This is tablets (7" and 10" in portrait orientation)
-  ipad was 768, otheres 800, most are over 1200 in landscape
-  481/16 = 30.063
-  800/16 = 50
+@media only screen and (min-width: 40em) {
+	/* Screens from 640px and up
   */
   
    .boxes div{
       width:32%;
-      float:left;
       margin-right:1.9%;
       background-color: #e9e9ff;
+    }
+    
+    /* remove previous nth-child */
+    .boxes div:nth-child(2n){
+      float:left;
     }
     
     .boxes div:nth-child(3n){
@@ -151,10 +132,9 @@ mostly this is mobile phones in portait orientation
   }
 }
 
-@media only screen and (min-width: 50.063em) {
-	/*  Screens over 800px
-  Tablets in landscape and most desktops
-  801/16 = 50.063
+@media only screen and (min-width: 50em) {
+	/*  Screens from 800px and up
+
   */
 
    .boxes div{
@@ -162,6 +142,11 @@ mostly this is mobile phones in portait orientation
       float:left;
       margin-right:1.32%;
       background-color: #ffffe9;
+    }
+    
+    .boxes div:nth-child(3n){
+      float:left;
+      margin-right:1.32%;
     }
     
     .boxes div:nth-child(4n){
