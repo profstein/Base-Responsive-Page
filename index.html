@@ -1,66 +1,41 @@
 <!doctype html>
-<html lang="en">
+<html class="no-js" lang="en">
+
 <head>
-  <meta charset="UTF-8" >
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Basic Responsive Page</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basic Responsive Page</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
 
 
-  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<!--[if (gte IE 6)&(lte IE 8)]>
-  <script type="text/javascript" src="js/selectivizr-min.js"></script>
+    <!--[if (gte IE 6)&(lte IE 8)]>
+  <script type="text/javascript" src="js/vendor/selectivizr-min.js"></script>
   <noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
 <![endif]-->
-<script src="js/respond.min.js"></script>
 
 </head>
+
 <body>
-  <div class="container">
-    <header>
-    <img src="http://placehold.it/1200x200" alt="header image" />
-  </header>
-  
-  <div class="features">
-  <div class="feature">
-    <p><img src="http://placehold.it/480x100" alt="featured image" /></p>
-    <p>This page was created to show a relatively basic but still full featured responsive page. It is intended more for educational purposes than as a full production-ready page. But feel free to use it how you like as a base for your own designs. If you do, drop me a note and let me know.</p>
-  </div>
-  
-  <div class="feature">
-    <p><img src="http://placehold.it/480x100" alt="featured image" /></p>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-  </div>
-  
-  <div class="feature">
-    <p><img src="http://placehold.it/480x100" alt="featured image" /></p>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-  </div>
- </div>  <!-- end .features -->
-  
-    
+    <header class="site-header">
+        <!-- add site wide header content here -->
+    </header>
 
-    <div class="boxes">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-      <div>5</div>
-      <div>6</div>
-      <div>7</div>
-      <div>8</div>
-      <div>9</div>
-      <div>10</div>
-      <div>11</div>
-      <div>12</div>
-    </div>
-    
+    <main id="main">
+        <!-- add main page content here -->
+        <p>This page is intentionally blank. See demo.html for an example.</p>
+    </main>
 
-    <footer>
-    <p>&copy; Chris Stein 2013</p>
-  </footer>
-  </div> <!-- end container -->
+    <footer class="site-footer">
+        <!-- add site-wide footer content here -->
+    </footer>
 
-
+    <!-- Leave this as the last thing before the closing /body tag -->
+    <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')
+    </script>
 </body>
+
 </html>
