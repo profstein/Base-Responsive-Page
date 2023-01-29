@@ -5,7 +5,7 @@ General Styles
 These are the styles that will apply to the page first. It includes things like basic fonts, font-size, link styling, list, base nvigation styling and so on. I'm not including most of that here but instead a couple of things that will help in most responsive designs (there is no "always" rule).
 */
 
-/* Border Box 
+/* Border Box --------------------------
 This is used to help you be able to set the widths of things once and then come and fiddle with borders and padding later without having to recalculate and change the width (something you have to do with the standard, default setting).
 */
 *{ 
@@ -16,168 +16,56 @@ This is used to help you be able to set the widths of things once and then come 
   box-sizing: border-box;  }
 
 
-/* Responsive Media
+/* Responsive Media ---------------------
 These settings allow media elements (img, video) to change size as their containing element changes size (which is part of a fluid grid and you want to happen).
 */
 img,video{width: auto; max-width: 100%; height: auto; margin: 0 auto 1em;}
 
-/* Specific tyles for this design
-These are just some specific styles I set to make the boxes look nice. You can ignore for your own designs. Setting the body font-size is important though as it sets the tone for all of the ems you wil use.
-*/
-body{
-  font-size:100%;
-  line-height:1.5;
-  font-family:sans-serif;
-}
-
-p{
-  margin-bottom:1em;
-}
-
-/* Your layout code goes here
-Here is a good place to put the code you have for your default layout. By default layout I mean the one that people see if there are no media queries. If you are doing mobile-first design this is where you would style the mobile look. If not then you can just do whatever it is you normally do for a site.
-*/
-
-.container{
-  width:95%;
-  max-width: 75em; /* 1200 / 16 */
-  margin:0 auto;
-  
-}
-
-.feature{
-  border:1px solid #555;
-  padding: 0.625em; /* 10/16 */
-  margin-bottom: 1.25em;/*20 /16 */
-}
-
-footer{
-  clear:both;
-  border-top: 3px solid #999;
-}
-
-.boxes{
-    clear:both; /*To make sure it doesn't run into the content above*/
-}
-
-.boxes div{
-  width:100%;
-  border:1px solid #999;
-  margin-bottom:1em;
-  padding:.5em;
-  height:4em;
-  line-height:3em;
-  text-align: center;
-  background-color: #ffe9e9;
-}
 
 /* ==============================
     Media Queries
    ==============================
   This is the media queries that make the site change at different screen widths.
+  Below is an example. You can modify or replace
 */
 
 
-@media only screen and (min-width: 30em) {
-/* Screen from 480px and up
-  480/16 = 30
-  480 is iphone in landscape before longer screen and retina
-  */
-    
-    .boxes div{
-      width:48%;
-      float:left;
-      background-color: #e9ffe9;
-    }
-    
-    .boxes div:nth-child(2n){
-      float:right;
-    }
-}
+
+/* CSS here for every device (import fonts, set base typography, base responsive styles, colors etc). */
+/*
+  Styles not in a media query will affect all screens. 
+  Add those first and for mobile-first design, 
+  start with the styles for mobile (small screen) devices
+*/
 
 
-@media only screen and (min-width: 40em) {
-	/* Screens from 640px and up
-  */
-  
-   .boxes div{
-      width:32%;
-      margin-right:1.9%;
-      background-color: #e9e9ff;
-    }
-    
-    /* remove previous nth-child */
-    .boxes div:nth-child(2n){
-      float:left;
-    }
-    
-    .boxes div:nth-child(3n){
-      float:right;
-      margin-right:0;
-    }
+@media (min-width: 600px){
+  /* Screens from 600px and up */
+  /* this applies to mobile in landscape and some tablets in portrait */
 
-    .feature{
-     width:100%;
-    overflow:hidden;
-  }
-   .feature p{
-     float:left;
-     width:47.916667%; /*230 / 480*/ 
-      margin-right:4.166666667%; /*20 / 480 */
-    text-align:justify;
-    }
-  
-    .feature p:last-child{
-   margin-right:0; 
-  }
-}
+}/*   end min-width 600 */
 
-@media only screen and (min-width: 50em) {
-	/*  Screens from 800px and up
 
-  */
 
-   .boxes div{
-      width:24%;
-      float:left;
-      margin-right:1.32%;
-      background-color: #ffffe9;
-    }
-    
-    .boxes div:nth-child(3n){
-      float:left;
-      margin-right:1.32%;
-    }
-    
-    .boxes div:nth-child(4n){
-      float:right;
-      margin-right:0;
-    }
+@media (min-width: 900px){
+  /* Screens from 900px and up */
+  /* this applies to tablets */
 
-    .feature{
-    float:left;
-    width:31.666667%; /*380 / 1200 */
-    margin-right:2.5%; /* 30/1200 */
-  }
-  
-  .feature:last-child{
-    margin-right:0;
-  }
-  
-  .feature p{
-    width: 100%;
-    float:none;
-    margin:0;
-    
-    
-  }
-  
-   .feature p:first-letter {
-      float: left;
-      font-size: 300%;
-      margin: -10px 5px -10px 0;
-    
-      margin: 0 5px 0 0;
-      line-height:1;
-  }
-}
+}/*   end min-width 900 */
+
+
+
+  @media (min-width: 1200px){
+    /* Screens from 1200px and up */
+    /* this applies average laptops */
+
+  }/*   end min-width 1200 */
+
+
+
+  @media (min-width: 1800px){
+    /* Screens from 1800px and up */
+    /* this applies to large laptops and desktops */
+
+  }/*   end min-width 1800 */
+
