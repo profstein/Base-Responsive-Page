@@ -1,27 +1,8 @@
-/* 
-==========================
-General Styles
-==========================
-These are the styles that you write that will apply to the page. A couple of generally useful styles for responsive design have been added.
-*/
+/* Base styles, including fonts, headings, links, buttons, etc. can be found in base.css */
 
-/* Border Box 
-This is used to help you be able to set the widths of things once and then come and fiddle with borders and padding later without having to recalculate and change the width (something you have to do with the standard, default setting). This is not needed as much with CSS Grid for layout.
-*/
-*{ 
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  -icab-box-sizing: border-box;
-  -khtml-box-sizing: border-box;
-  box-sizing: border-box;  }
-
-
-/* Responsive Media
-These settings allow media elements (img, video) to change size as their containing element changes size (which is part of a fluid grid and you want to happen).
-*/
-img,video{width: auto; max-width: 100%; height: auto;}
-
+/* You can copy and paste that CSS into your main style.css or keep it as a separate file and link both in your HTML files. */
 
 /* ====== Add your CSS here ======== */
+
+
+
