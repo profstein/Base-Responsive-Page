@@ -1,109 +1,144 @@
-/*
-==========================
-General Styles
-==========================
-These are the styles that will apply to the page first. It includes things like basic fonts, font-size, link styling, list, base nvigation styling and so on. I'm not including most of that here but instead a couple of things that will help in most responsive designs (there is no "always" rule).
+/* ==============================
+    Custom Styles for this Demo Page
+   ==============================
+  These are the styles that you write to add your
+  site's style to base.css. In your site, you would
+  write the equivalent in the style.css file.
 */
 
-/* Border Box
-This is used to help you be able to set the widths of things once and then come and fiddle with borders and padding later without having to recalculate and change the width (something you have to do with the standard, default setting).
-*/
-* {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    -o-box-sizing: border-box;
-    -icab-box-sizing: border-box;
-    -khtml-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-
-/* Responsive Media
-These settings allow media elements (img, video) to change size as their containing element changes size (which is part of a fluid grid and you want to happen).
-*/
-img,
-video {
-    width: auto;
-    max-width: 100%;
-    height: auto;
-}
-
-/* Video Embed (youtube or vimeo etc)*/
-.videoWrapper {
-    position: relative;
-    padding-top: 25px;
-    height: 0;
-    clear: both;
-    outline: 1px solid red;
-}
-
-.videoWrapper.ratio-16-9 {
-    padding-bottom: 56.25%;
-    /* 16:9 */
-}
-
-.videoWrapper.ratio-4-3 {
-    padding-bottom: 75%;
-    /* 4:3 */
-}
-
-.videoWrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+/* ==================================================
+     Section / Container Utilities (layout helpers)
+     Enables full-width colored bands with centered content.
+     ================================================== */
+.section {
     width: 100%;
-    height: 100%;
+    padding-block: var(--spacing-2xl);
 }
 
-
-/* Specific tyles for this design
-These are just some specific styles I set to make the boxes look nice. You can ignore for your own designs. Setting the body font-size is important though as it sets the tone for all of the ems you wil use.
-*/
-
-/* ==== Base page styles, apply to all browsers ==== */
-body {
-    font-size: 100%;
-    line-height: 1.5;
-    font-family: sans-serif;
-    padding: 0 20px;
+/* Constrain inner content and add horizontal breathing room */
+.container {
+    width: min(100% - (2 * var(--spacing-md)), 70ch);
+    margin-inline: auto;
+    /* padding-inline: var(--spacing-md); */
 }
 
-p {
-    margin-bottom: 1em;
+/* Generic background utility classes */
+.bg-primary { background: var(--primary-bg); }
+.bg-secondary { background: var(--secondary-bg); }
+.bg-accent { background: var(--accent-color); color: var(--button-text-color); }
+
+/* Specific section variants (override if needed) */
+.section-header { color:var(--primary-color); background: var(--primary-bg); }
+.section-intro { color:var(--primary-color); background: var(--primary-bg); }
+.section-features { color:var(--secondary-color); background: var(--secondary-bg); }
+.section-typography { color:var(--primary-color); background: var(--primary-bg); }
+.section-cards { color:var(--secondary-color); background: var(--secondary-bg); }
+.section-boxes { color:var(--primary-color); background: var(--primary-bg); }
+.section-footer { color:var(--secondary-color); background: var(--secondary-bg); }
+.section-footer a { color: var(--secondary-link-color); }
+.section-footer a:hover { color: var(--secondary-link-hover-color); }
+.section-footer a:visited { color: var(--secondary-link-visited-color); }
+
+/* Spacing rhythm between consecutive sections */
+.section + .section { margin-top: 0; }
+
+/* Optional accent gradient utility */
+.bg-accent-gradient { 
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-color2) 100%);
+    color: var(--button-text-color);
 }
 
+/* Improve contrast for links/buttons inside accent sections */
+.bg-accent a, .bg-accent-gradient a { color: var(--button-text-color); }
+.bg-accent a:hover, .bg-accent-gradient a:hover { color: var(--link-hover-color); }
+
+/* Colors for Header and Footer */
+.section-header, .section-footer {
+    color:var(--headerFooter-color); 
+    background: var(--headerFooter-bg);
+}
+
+p.dropcap::first-letter {
+  float: left;
+  font-size: 3.5em;
+  font-weight: 700;
+  line-height: 0.8;
+  margin: 0.05em 0.15em 0 0;
+}
+.section h2{
+    margin-top:var(--spacing-xs)
+}
+.grid h2{
+    grid-column: 1/-1
+}
 .feature {
+    color:var(--primary-color); 
+    background: var(--primary-bg);
     border: 1px solid #555;
-    padding: 0.625em;
-    /* 10/16 */
+    padding: var(--spacing-md);
 }
 
-.feature p:first-letter {
-    float: left;
-    font-size: 300%;
-    margin: 0 5px 0 0;
-    line-height: 1;
-}
 
-.boxes {
-    margin: 60px 0;
+.card {
+    color:var(--primary-color); background: var(--primary-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    padding-bottom: var(--spacing-md);
+}
+.card .description {
+    flex-grow: 1;
+}
+.card .info {
+    padding: var(--spacing-md);
+}
+.card .action{
+    margin-top: auto;
+    padding: var(--spacing-md);
+    text-align: center;
+}
+.card h3 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--text-size-xl);
 }
 
 .box {
     border: 1px solid #999;
-    /*  margin-bottom:1em;*/
-    padding: .5em;
-    height: 4em;
-    line-height: 3em;
+    padding: var(--spacing-xs);
+    height: var(--spacing-2xl);
+    line-height: var(--spacing-2xl);
     text-align: center;
     background-color: #fafafa;
 }
 
+
 footer {
     border-top: 3px solid #999;
+    padding-top: var(--spacing-md)
 }
 
+/* ======= Grid Layouts using CSS Grid ======= */
+    .features {
+        display: grid;
+        grid-gap: var(--spacing-md);
+        grid-template-columns: 1fr;
+    }
+
+    .cards{
+    display: grid;
+    grid-gap: var(--spacing-md);
+    grid-template-columns: 1fr;
+}
+
+    .boxes {
+        display: grid;
+        grid-gap: var(--spacing-md);
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
 
 /* ==============================
     Media Queries
@@ -114,71 +149,41 @@ footer {
 /* Your layout code goes here
 Here is a good place to put the code you have for your default layout. By default layout I mean the one that people see if there are no media queries. If you are doing mobile-first design this is where you would style the mobile look. If not then you can just do whatever it is you normally do for a site.
 */
-
-@supports (grid-area: auto) {
-    .features {
-        display: grid;
-        grid-gap: 20px;
-        grid-template-columns: 1fr;
-    }
-
-    .boxes {
-        display: grid;
-        grid-gap: 20px;
-        grid-template-columns: 1fr 1fr;
-    }
-
+    /* this applies to mobile in landscape and some tablets in portrait */
     @media (min-width: 600px) {
-
-        /* this applies to mobile in landscape and some tablets in portrait */
-        .boxes {
-            grid-template-columns: 1fr 1fr 1fr;
+        .features {
+            grid-template-columns: 1fr 1fr;
+        }
+        .cards {
+            grid-template-columns: repeat(2, 1fr);
         }
     }
-
     /*   end min-width 600 */
 
 
-
+    /* this applies to tablets */
     @media (min-width: 900px) {
-
-        /* this applies to tablets */
         .features {
             grid-template-columns: 1fr 1fr 1fr;
         }
-
-        .boxes {
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-
     }
-
     /*   end min-width 900 */
 
-
-
+    /* this applies average laptops */
     @media (min-width: 1200px) {
-
-        /* this applies average laptops */
         .boxes {
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         }
-
+        .cards {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
-
     /*   end min-width 1200 */
 
-
-
+    /* this applies to large laptops and desktops */
     @media (min-width: 1800px) {
-
-        /* this applies to large laptops and desktops */
-        .boxes {
-            grid-template-columns: repeat(12, 1fr);
-        }
 
     }
 
-}
+/* end grid */
 
-/* end @supports grid */
