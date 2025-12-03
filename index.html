@@ -1,22 +1,17 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Basic responsive page starter with semantic HTML, modern CSS, and accessibility-friendly patterns.">
     <title>Basic Responsive Page</title>
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/style.css">
-
-
-    <!--[if (gte IE 6)&(lte IE 8)]>
-  <script type="text/javascript" src="js/vendor/selectivizr-min.js"></script>
-  <noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
-<![endif]-->
-
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
         <!-- add site wide header content here -->
     </header>
@@ -31,13 +26,17 @@
     </footer>
 
     <!-- Leave this as the last thing before the closing /body tag -->
-    
-    <script src="js/vendor/modernizr-3.7.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script>
-        window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')
-    </script>
-    <script src="js/main.js"></script>
+        <!-- jQuery via CDN with modern dynamic fallback -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script>
+        <script>
+            if (!window.jQuery) {
+                const fallback = document.createElement('script');
+                fallback.src = 'js/vendor/jquery-3.7.1.min.js';
+                fallback.defer = true;
+                document.head.appendChild(fallback);
+            }
+        </script>
+    <script src="js/main.js" defer></script>
 </body>
 
 </html>
