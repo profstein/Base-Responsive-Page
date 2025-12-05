@@ -15,38 +15,31 @@ CSS Variables
 :root {
     /* ------------------------------- Colors -----------------------------*/
     /* Base semantic palette */
-    --primary-color: #222222;
-    /* Primary text color */
-    --primary-bg: #ffffff;
-    /* Primary background color */
-    --secondary-color: #f8f7f7;
-    /* Secondary/alternative text color */
-    --secondary-bg: #135C52;
-    /* Secondary/alternative background color */
-    --accent-color: #E45F2B;
-    /* Accent or brand color */
-    --accent-color2: #F6C445;
+     
+    --primary-color: #222222; /* Primary text color */
+    --primary-bg: #ffffff;   /* Primary background color */
+    --secondary-color: #f8f7f7; /* Secondary/alternative text color */
+    --secondary-bg: #135C52;   /* Secondary/alternative background color */
+    --accent-color: #E45F2B;   /* Accent or brand color */
+    --accent-color2: #F6C445;  /* Secondary accent color */
 
 
     /* Link + Button specific tokens */
-    --link-color: #0b57d0;
-    /* Primary link/action color */
-    --link-hover-color: #0945a6;
-    /* Darker for hover/focus */
-    --link-visited-color: #5a35a6;
-    /* Distinct visited state */
-    --button-bg: var(--link-color);
-    /* Primary button color (matches link) */
-    --button-hover-bg: var(--link-hover-color);
-    /* Hover button color (matches link hover) */
-    --button-text-color: #ffffff;
-    /* Accessible contrast on button bg */
-
+    --link-color: #0b57d0; /* Primary link/action color */
+    --link-hover-color: #0945a6; /* Darker for hover/focus */
+    --link-visited-color: #5a35a6; /* Distinct visited state */
+    --button-bg: var(--link-color); /* Primary button color (matches link) */
+    --button-hover-bg: var(--link-hover-color); /* Hover button color (matches link hover) */
+    --button-text-color: #ffffff; /* Accessible contrast on button bg */
+    
     /* Secondary link colors for use with secondary-bg color */
     --secondary-link-color: #f4b71c;
     --secondary-link-hover-color: #f9d67f;
     --secondary-link-visited-color: #eec283;
 
+    /* Header and Footer colors
+        If you want these to be different than the rest of the page. 
+        you can reuse previous variables or define new ones here */
     --headerFooter-color: #eee;
     --headerFooter-bg: #333;
 
